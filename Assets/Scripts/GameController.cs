@@ -6,6 +6,15 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance = null;
 
+    public enum TurnState
+    {
+        Other,
+        PlayerOne,
+        OneToTwo,
+        PlayerTwo,
+        TwoToOne
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -13,15 +22,17 @@ public class GameController : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
-    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+        initGame();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    private void initGame()
+    {
+
+    }
 }
